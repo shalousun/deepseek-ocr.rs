@@ -1,5 +1,5 @@
 ARG CUDA_VERSION=12.4.1
-ARG UBUNTU_VERSION=24.04
+ARG UBUNTU_VERSION=22.04
 
 FROM docker.io/nvidia/cuda:${CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION} as compile
 RUN apt-get update
