@@ -1,4 +1,4 @@
-ARG CUDA_VERSION=12.9.1
+ARG CUDA_VERSION=12.4.1
 ARG UBUNTU_VERSION=24.04
 
 FROM docker.io/nvidia/cuda:${CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION} as compile
