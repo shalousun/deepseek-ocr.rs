@@ -11,7 +11,7 @@ WORKDIR /compile
 ARG CUDA_COMPUTE_CAP=86
 RUN . "$HOME/.cargo/env" && cargo build --release --features cuda
 
-FROM docker.io/ubuntu:${UBUNTU_VERSION}
+FROM registry.cn-shanghai.aliyuncs.com/shalousun/ubuntu:${UBUNTU_VERSION}
 COPY --from=compile /compile/target/release/deepseek-ocr-cli    /usr/local/bin/deepseek-ocr-cli
 COPY --from=compile /compile/target/release/deepseek-ocr-server /usr/local/bin/deepseek-ocr-server
 # cudart, curand, cublas, cublasLt
