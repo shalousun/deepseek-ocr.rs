@@ -1,7 +1,7 @@
 ARG CUDA_VERSION=12.4.1
 ARG UBUNTU_VERSION=22.04
 
-FROM docker.io/nvidia/cuda:${CUDA_VERSION}-devel-ubuntu${UBUNTU_VERSION} as compile
+FROM registry.cn-shanghai.aliyuncs.com/shalousun/ubuntu-nvidia-cuda:12.4.1-cudnn-devel-ubuntu22.04 as compile
 RUN apt-get update
 RUN apt-get install -y curl
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
