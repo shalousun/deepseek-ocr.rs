@@ -8,7 +8,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 COPY . /compile
 WORKDIR /compile
-ARG CUDA_COMPUTE_CAP=86
+ARG CUDA_COMPUTE_CAP=80
 RUN . "$HOME/.cargo/env" && cargo build --release --features cuda
 
 FROM registry.cn-shanghai.aliyuncs.com/shalousun/ubuntu:${UBUNTU_VERSION}
